@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Puzzlandia</title>
+        <meta name="description" content="El país de los puzzles">
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <link rel="stylesheet" href="css/fontello.css">
+        <script src='javascript.js'></script>
+    </head>
+
+    <body onload="deshabilitarBotonesAbajo(), prepararCanvas(), imagen()">
+
+        <header>
+            <a href="index.html"><img src='logop.png' alt="Logotipo" width="250"></a>
+            <div>
+                <h1 id="arriba">Puzzlandia</h1>
+                <p>El país de los puzzles</p>
+            </div>
+        </header>
+
+    <section>
+        <h2>Imagen</h2>
+        <canvas id="cv01" onclick="imagencan()"></canvas>
+        <footer id="subefoto">
+            <input type="file" name="file" id="boton" accept="image/*" onchange="ImgSource(this)">
+        </footer>
+    </section>
+
+    <section>
+        <h2>Puzzle</h2>
+        <canvas id="cv02"></canvas>
+        <footer id="botonera2">
+            <label>Color: <input type="color" id="color" onchange="cambiarColor(), dibujarLineas()"></label>
+            <label>Dificultad: </label><select id="dificultad" name=dificultad onchange="seleccionarDificultad(), dibujarLineas()"><option value="1">Baja</option><option value="2">Media</option><option value="3">Alta</option></select><br>
+            <button id="btn1" onclick="empezar()"> Empezar </button>
+            <button id="btn2" onclick="terminar()"> Terminar </button>
+            <button id="btn3" onclick="ayuda()"> Ayuda </button>
+        </footer>
+
+        <div id="marcador"></div>
+
+    </section>
+
+    <script>prepararCanvas()</script>
+
+        <footer>
+            <a href="#arriba">Volver a index</a><br>
+            <a href="acerca.html">Acerca</a>
+            <p>&copy;<time datetime="2018-02"> Mayo 2018</time></p>
+        </footer>
+
+        <div id="myModal1" class="modal">
+        <div class="modal-content">
+            <span onclick="ocultar1();" class="close">&times;</span>
+            <p id="info"></p>
+        </div>
+        </div>
+
+    </body>
+
+
+
+</html>
